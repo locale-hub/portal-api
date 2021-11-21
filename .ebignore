@@ -1,0 +1,7 @@
+**/*.ts
+.git/
+node_modules/
+.idea/
+.env*
+!.env
+scripts/
