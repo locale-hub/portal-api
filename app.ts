@@ -18,6 +18,7 @@ import organizationRoutes from './controllers/organizations.controller';
 import organizationUsersRoutes from './controllers/organizationUsers.controller';
 import projectsRoutes from './controllers/project.controller';
 import projectUsersRoutes from './controllers/projectUser.controller';
+import usersRoutes from './controllers/users.controller';
 import {config} from './configs/config';
 import {sendError} from './logic/helpers/sendError.helper';
 import {ErrorCode} from './data/enums/error-code.enum';
@@ -189,6 +190,15 @@ expressApp.use(
   '/v1/projects',
   authenticate,
   projectsRoutes,
+);
+
+/**
+ * Users related routes
+ */
+expressApp.use(
+  '/v1/users',
+  authenticate,
+  usersRoutes,
 );
 
 /**
